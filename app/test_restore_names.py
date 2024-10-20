@@ -3,7 +3,7 @@ from app.restore_names import restore_names
 
 
 @pytest.fixture()
-def users_template():
+def users_template() -> list:
     return [
         {
             "first_name": None,
@@ -17,7 +17,7 @@ def users_template():
     ]
 
 
-def test_restore_names(users_template):
+def test_restore_names(users_template: list) -> None:
     restore_names(users_template)
     expected_users = [
         {
